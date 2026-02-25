@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゆめかの LP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Noto+Sans+JP:wght@400;600;700;900&family=Noto+Serif+JP:wght@900&family=Righteous&family=Gajraj+One&family=Arsenal+SC:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #f0f0f0;
+      min-height: 100vh;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    /* ============================================
+       HEADER NAV
+    ============================================ */
+    .header-nav {
+      width: 100%;
+      height: 60px;
+      background: rgba(230, 101, 166, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-nav .nav-logo {
+      font-family: 'Righteous', sans-serif;
+      font-size: 14px;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+
+    .header-nav .nav-links {
+      display: none;
+    }
+
+    /* ============================================
+       HERO SECTION
+    ============================================ */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #fdf2f8 0%, #fce7f3 30%, #fbcfe8 60%, #f9a8d4 100%);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.25;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .hero-logo {
+      width: 160px;
+      margin-bottom: 12px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #e65aa6 0%, #d64a96 100%);
+      color: #ffffff;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(230, 90, 166, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 28px rgba(230, 90, 166, 0.5);
+    }
+
+    .hero-characters {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .hero-characters img {
+      height: 280px;
+      width: auto;
+      object-fit: contain;
+      object-position: bottom;
+      margin: 0 -30px;
+    }
+
+    /* ============================================
+       SECTION COMMON
+    ============================================ */
+    .section-title {
+      font-family: 'Agbalumo', cursive;
+      font-size: 22px;
+      color: #ffffff;
+      padding: 16px 0 8px 0;
+      text-align: center;
+    }
+
+    /* ============================================
+       TOPICS SECTION
+    ============================================ */
+    .topics {
+      background: linear-gradient(180deg, #e88fbf 0%, #d77eb0 100%);
+      padding: 24px 20px;
+    }
+
+    .topics .section-title {
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .topics-card {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .topics-date {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .topics-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      color: #ffffff;
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       INTRODUCTION SECTION
+    ============================================ */
+    .introduction {
+      background: #ffffff;
+      padding: 32px 20px;
+    }
+
+    .introduction .section-title {
+      color: #e57baa;
+      margin-bottom: 8px;
+    }
+
+    .introduction-subtitle {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      color: #333333;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .introduction-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .introduction-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      color: #555555;
+      line-height: 1.9;
+      text-align: center;
+    }
+
+    .introduction-image {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 8px;
+    }
+
+    .introduction-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .introduction-link {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      color: #ffffff;
+      background: #e57baa;
+      text-decoration: none;
+      padding: 12px 32px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.3s;
+    }
+
+    .introduction-link:hover {
+      background: #d66a99;
+    }
+
+    .introduction-link::after {
+      content: '→';
+    }
+
+    /* ============================================
+       WORLD SECTION
+    ============================================ */
+    .world {
+      background: #d6ba4c;
+      padding: 20px 16px 30px;
+    }
+
+    .world .section-title {
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .world-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      color: #5a4200;
+      line-height: 1.9;
+      text-align: center;
+    }
+
+    /* ============================================
+       CHARACTERS SECTION
+    ============================================ */
+    .characters {
+      background: #f1d783;
+      padding: 20px 16px 30px;
+    }
+
+    .characters .section-title {
+      color: #eda66a;
+      font-family: 'Agbalumo', cursive;
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    /* Character Grid - Mobile: carousel, Desktop: grid */
+    .char-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .char-card {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(237, 166, 106, 0.15);
+    }
+
+    .char-card.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .char-img-container {
+      width: 120px;
+      height: 200px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .char-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom center;
+    }
+
+    .char-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 12px;
+      flex: 1;
+    }
+
+    .char-card.reverse .char-info {
+      text-align: right;
+      align-items: flex-end;
+    }
+
+    .char-name-jp {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 900;
+      font-size: 16px;
+      color: #9e5d3e;
+      margin-bottom: 2px;
+    }
+
+    .char-name-en {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      color: #9e5d3e;
+      margin-bottom: 8px;
+    }
+
+    .char-divider {
+      width: 100%;
+      height: 1px;
+      background: #9e5d3e;
+      margin-bottom: 8px;
+    }
+
+    .char-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      color: #9e5d3e;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .char-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .char-card.reverse .char-tags {
+      justify-content: flex-end;
+    }
+
+    .char-tag {
+      display: inline-block;
+      background: rgba(237, 166, 106, 0.15);
+      border: 1px solid #eda66a;
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      color: #eda66a;
+    }
+
+    .characters-sub-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      color: #eda66a;
+      text-align: center;
+      padding: 20px 20px 0;
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       SYSTEM SECTION
+    ============================================ */
+    .system {
+      background: #91d0cc;
+      padding: 20px 16px 30px;
+    }
+
+    .system .section-title {
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .system-sub {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .system-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .system-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    /* ============================================
+       SPECIAL SECTION
+    ============================================ */
+    .special {
+      background: #fdabcf;
+      padding: 20px 16px 30px;
+    }
+
+    .special .section-title {
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .special-sub {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .special-card {
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .special-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ============================================
+       PRICING SECTION
+    ============================================ */
+    .pricing {
+      background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 50%, #ffd6e7 100%);
+      padding: 32px 16px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(253, 171, 207, 0.4) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .pricing::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(229, 123, 170, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .pricing .section-title {
+      color: #e57baa;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-sub {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: #d16a9a;
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-cards {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-card {
+      width: 140px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px 12px 20px;
+      box-shadow: 0 4px 20px rgba(229, 123, 170, 0.15);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(229, 123, 170, 0.25);
+    }
+
+    .pricing-card.popular {
+      background: linear-gradient(180deg, #fff0f5 0%, #ffe4ec 100%);
+      border: 2px solid #ff69b4;
+      transform: scale(1.05);
+      box-shadow: 0 6px 24px rgba(255, 105, 180, 0.3);
+    }
+
+    .pricing-card.popular:hover {
+      transform: scale(1.05) translateY(-4px);
+    }
+
+    .pricing-card.popular::before {
+      content: '人気';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #ff8fbf 0%, #fdabcf 100%);
+      color: #ffffff;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      padding: 4px 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(253, 171, 207, 0.4);
+    }
+
+    .pricing-price {
+      text-align: center;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed rgba(229, 123, 170, 0.3);
+    }
+
+    .pricing-yen {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #e57baa;
+      vertical-align: top;
+    }
+
+    .pricing-amount {
+      font-family: 'Righteous', sans-serif;
+      font-size: 24px;
+      color: #e57baa;
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-tax {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 9px;
+      color: #c9a0b0;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .pricing-details {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pricing-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pricing-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+
+    .pricing-icon.cp {
+      background: linear-gradient(135deg, #fdabcf 0%, #f8c8dc 100%);
+      color: #ffffff;
+    }
+
+    .pricing-icon.sp {
+      background: linear-gradient(135deg, #ffd700 0%, #ffeb99 100%);
+      color: #b8860b;
+    }
+
+    .pricing-icon.chat {
+      background: linear-gradient(135deg, #91d0cc 0%, #b8e6e3 100%);
+      color: #ffffff;
+    }
+
+    .pricing-label {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 9px;
+      color: #999999;
+      min-width: 45px;
+    }
+
+    .pricing-value {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: #555555;
+    }
+
+    .pricing-note {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 500;
+      font-size: 10px;
+      color: #b0a0a8;
+      text-align: center;
+      margin-top: 16px;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ============================================
+       TRUST SECTION
+    ============================================ */
+    .trust {
+      background: #cdc8df;
+      padding: 20px 20px 30px;
+    }
+
+    .trust .section-title {
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .trust-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .trust-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      color: #ffffff;
+      line-height: 2;
+      white-space: pre-line;
+      text-align: center;
+    }
+
+    /* ============================================
+       FAQ SECTION
+    ============================================ */
+    .faq {
+      background: #111111;
+      padding: 20px 20px 40px;
+    }
+
+    .faq .section-title {
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 2px;
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .faq-q-label {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: 11px;
+      color: #ffffff;
+      width: 32px;
+      flex-shrink: 0;
+      border-right: 1px solid rgba(255,255,255,0.3);
+      padding-right: 8px;
+      line-height: 2.5;
+      text-align: center;
+    }
+
+    .faq-q-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      color: #ffffff;
+      padding: 0 12px;
+      flex: 1;
+      line-height: 2;
+    }
+
+    .faq-toggle {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      color: #ffffff;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      background: #ffffff;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .faq-item.open .faq-answer {
+      display: flex;
+    }
+
+    .faq-a-label {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: 11px;
+      color: #000000;
+      width: 32px;
+      flex-shrink: 0;
+      border-right: 1px solid rgba(0,0,0,0.15);
+      padding-right: 8px;
+      line-height: 2.5;
+      text-align: center;
+    }
+
+    .faq-a-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      color: #000000;
+      padding: 0 12px;
+      line-height: 1.9;
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .footer {
+      background: #ffffff;
+      padding: 30px 20px 24px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      color: #333333;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-link:hover {
+      color: #e57baa;
+    }
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .footer-game-logo {
+      height: 22px;
+      width: auto;
+    }
+
+    .footer-ikigai {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-ikigai-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .footer-ikigai-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .footer-ikigai-name {
+      font-family: 'Gajraj One', sans-serif;
+      font-size: 12px;
+      color: #111111;
+    }
+
+    .footer-copyright {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      color: #7f7f7f;
+      text-align: center;
+    }
+
+    /* ============================================
+       DESKTOP RESPONSIVE (768px+)
+    ============================================ */
+    @media (min-width: 768px) {
+      .header-nav {
+        height: 70px;
+        padding: 0 40px;
+      }
+
+      .header-nav .nav-logo {
+        font-size: 18px;
+      }
+
+      .header-nav .nav-links {
+        display: flex;
+        gap: 28px;
+      }
+
+      .header-nav .nav-link {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #ffffff;
+        text-decoration: none;
+        transition: opacity 0.3s;
+      }
+
+      .header-nav .nav-link:hover {
+        opacity: 0.8;
+      }
+
+      .hero {
+        height: 600px;
+      }
+
+      .hero-content {
+        top: 40px;
+      }
+
+      .hero-logo {
+        width: 240px;
+        margin-bottom: 16px;
+      }
+
+      .hero-cta {
+        font-size: 16px;
+        padding: 14px 40px;
+      }
+
+      .hero-characters img {
+        height: 420px;
+        margin: 0 -50px;
+      }
+
+      .section-title {
+        font-size: 32px;
+        padding: 24px 0 16px 0;
+      }
+
+      .topics {
+        padding: 40px;
+      }
+
+      .topics-card {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 24px 32px;
+      }
+
+      .topics-date {
+        font-size: 14px;
+      }
+
+      .topics-text {
+        font-size: 15px;
+      }
+
+      .introduction {
+        padding: 60px 40px;
+      }
+
+      .introduction-subtitle {
+        font-size: 20px;
+        margin-bottom: 24px;
+      }
+
+      .introduction-content {
+        flex-direction: row;
+        gap: 60px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .introduction-text {
+        font-size: 15px;
+        line-height: 2;
+        text-align: left;
+        flex: 1;
+      }
+
+      .introduction-image {
+        width: 350px;
+        flex-shrink: 0;
+        border-radius: 12px;
+      }
+
+      .world {
+        padding: 50px 40px 60px;
+      }
+
+      .world-text {
+        font-size: 15px;
+        line-height: 2;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .characters {
+        padding: 50px 40px 60px;
+      }
+
+      .characters .section-title {
+        font-size: 32px;
+        margin-bottom: 32px;
+      }
+
+      .char-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .char-card {
+        padding: 28px;
+        gap: 24px;
+      }
+
+      .char-img-container {
+        width: 180px;
+        height: 280px;
+      }
+
+      .char-name-jp {
+        font-size: 20px;
+      }
+
+      .char-name-en {
+        font-size: 12px;
+      }
+
+      .char-desc {
+        font-size: 13px;
+      }
+
+      .char-tag {
+        font-size: 12px;
+        padding: 5px 12px;
+      }
+
+      .characters-sub-text {
+        font-size: 15px;
+        padding: 32px 48px 0;
+      }
+
+      .system {
+        padding: 50px 40px 60px;
+      }
+
+      .system-sub {
+        font-size: 18px;
+        margin-bottom: 32px;
+      }
+
+      .system-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .system-card {
+        border-radius: 12px;
+      }
+
+      .system-card img {
+        height: 200px;
+      }
+
+      .special {
+        padding: 50px 40px 60px;
+      }
+
+      .special-sub {
+        font-size: 18px;
+        margin-bottom: 32px;
+      }
+
+      .pricing {
+        padding: 60px 40px 70px;
+      }
+
+      .pricing-sub {
+        font-size: 16px;
+        margin-bottom: 40px;
+      }
+
+      .pricing-cards {
+        gap: 12px;
+        flex-wrap: nowrap;
+      }
+
+      .pricing-card {
+        width: 155px;
+        padding: 20px 14px 24px;
+      }
+
+      .pricing-card.popular {
+        transform: scale(1.08);
+      }
+
+      .pricing-card.popular:hover {
+        transform: scale(1.08) translateY(-8px);
+      }
+
+      .pricing-amount {
+        font-size: 28px;
+      }
+
+      .pricing-note {
+        font-size: 12px;
+        margin-top: 32px;
+      }
+
+      .trust {
+        padding: 50px 40px 60px;
+      }
+
+      .trust-card {
+        padding: 24px 32px;
+        border-radius: 12px;
+      }
+
+      .trust-text {
+        font-size: 14px;
+        line-height: 2.2;
+      }
+
+      .faq {
+        padding: 60px 40px 80px;
+      }
+
+      .faq-q-label,
+      .faq-a-label {
+        font-size: 14px;
+        width: 48px;
+      }
+
+      .faq-q-text {
+        font-size: 15px;
+        padding: 0 20px;
+      }
+
+      .faq-a-text {
+        font-size: 14px;
+        padding: 0 20px;
+      }
+
+      .faq-toggle {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+      }
+
+      .footer {
+        padding: 50px 60px 40px;
+      }
+
+      .footer-inner {
+        gap: 24px;
+      }
+
+      .footer-links {
+        gap: 32px;
+      }
+
+      .footer-link {
+        font-size: 14px;
+      }
+
+      .footer-logos {
+        gap: 32px;
+      }
+
+      .footer-game-logo {
+        height: 32px;
+      }
+
+      .footer-ikigai-icon {
+        width: 32px;
+        height: 32px;
+      }
+
+      .footer-ikigai-name {
+        font-size: 16px;
+      }
+
+      .footer-copyright {
+        font-size: 12px;
+      }
+    }
+
+    /* ============================================
+       LARGE DESKTOP (1024px+)
+    ============================================ */
+    @media (min-width: 1024px) {
+      .header-nav {
+        padding: 0 60px;
+      }
+
+      .header-nav .nav-logo {
+        font-size: 20px;
+      }
+
+      .header-nav .nav-links {
+        gap: 32px;
+      }
+
+      .hero {
+        height: 650px;
+      }
+
+      .hero-logo {
+        width: 280px;
+      }
+
+      .hero-characters img {
+        height: 450px;
+      }
+
+      .section-title {
+        font-size: 36px;
+      }
+
+      .char-img-container {
+        width: 200px;
+        height: 320px;
+      }
+
+      .system-card img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER NAV -->
+    <header class="header-nav">
+      <span class="nav-logo">Ikigai Game Labo.</span>
+      <nav class="nav-links">
+        <a href="#introduction" class="nav-link">ゆめかのとは</a>
+        <a href="#characters" class="nav-link">キャラクター</a>
+        <a href="#system" class="nav-link">システム</a>
+        <a href="#pricing" class="nav-link">料金</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+      <img
+        class="hero-bg"
+        src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fa4f404b-e3a9-414e-b8fc-3233a34ae20f"
+        alt="hero background"
+      >
+
+      <!-- Logo + CTA -->
+      <div class="hero-content">
+        <img
+          class="hero-logo"
+          src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9a466554-d63c-46cb-a4f7-abafd1ac6ce8"
+          alt="ゆめかの ロゴ"
+        >
+        <a href="#" class="hero-cta">今すぐプレイ</a>
+      </div>
+
+      <!-- Character group -->
+      <div class="hero-characters">
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fd4ca649-4d72-411f-a490-dae0c7b4bc35" alt="imari">
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9ebcf30c-de6f-4b67-87f4-7180ac0ecc07" alt="mimi">
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4758e535-470a-44c0-a634-d48ca8bd51b9" alt="seira">
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/936dc821-551b-4158-a2c3-f026b7d09272" alt="ive">
+      </div>
+    </div>
+
+    <!-- TOPICS SECTION -->
+    <section class="topics">
+      <div class="section-title">Topics</div>
+      <div class="topics-card">
+        <div class="topics-date">2025.12.14</div>
+        <div class="topics-text">AIキャラクターとの会話で物語が進む、新しい恋愛体験を届けるためにリリースしていきます。<br>よろしくお願いします。</div>
+      </div>
+    </section>
+
+    <!-- INTRODUCTION SECTION -->
+    <section class="introduction" id="introduction">
+      <div class="section-title">Introduction</div>
+      <div class="introduction-subtitle">ゆめかのとは？</div>
+      <div class="introduction-content">
+        <div class="introduction-text">
+          AIキャラクターとの会話で、<br>
+          物語が進む恋愛チャットゲームです。<br><br>
+          選択肢を選ぶのではなく、<br>
+          自由な言葉で関係を築いていきます。<br><br>
+          "話す"ではなく "紡ぐ"ことで、<br>
+          あなただけの物語が生まれます。
+        </div>
+        <img class="introduction-image" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9446eda6-1331-4fb5-9438-f24f203f0fa3" alt="ゲーム画面">
+      </div>
+      <div class="introduction-cta">
+        <a href="#" class="introduction-link">あとでプレイする</a>
+      </div>
+    </section>
+
+    <!-- WORLD SECTION -->
+    <section class="world">
+      <div class="section-title">World</div>
+      <p class="world-text">ゆめかのには、いくつかの物語の大枠があります。<br><br>ただし展開は、あなたとキャラクターの会話によって少しずつ変化します。<br><br>決まった正解ルートではなく、関係の積み重ねが物語になります。<br><br>※ストーリー構成は開発中のため、変更になる場合があります。</p>
+    </section>
+
+    <!-- CHARACTERS SECTION -->
+    <section class="characters" id="characters">
+      <div class="section-title">Characters</div>
+
+      <div class="char-grid">
+        <!-- Seira -->
+        <div class="char-card">
+          <div class="char-img-container">
+            <img class="char-img" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/97c63a73-6dfa-4974-a2c5-e44104bf16b3" alt="蒼井セイラ">
+          </div>
+          <div class="char-info">
+            <div class="char-name-jp">蒼井 セイラ</div>
+            <div class="char-name-en">Aoi seira</div>
+            <div class="char-divider"></div>
+            <div class="char-desc">メジャーデビューを目指す、<br>まっすぐで礼儀正しいアイドル。<br>あなたとの出会いを大切に覚えていて、<br>心を許すと、少し甘えてくる。</div>
+            <div class="char-tags">
+              <span class="char-tag">王道アイドル</span>
+              <span class="char-tag">素直で前向き</span>
+              <span class="char-tag">ちょっと天然</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mimi -->
+        <div class="char-card reverse">
+          <div class="char-img-container">
+            <img class="char-img" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2769c0f2-e7ba-4f04-ad83-dda20705c987" alt="赤羽ミミ">
+          </div>
+          <div class="char-info">
+            <div class="char-name-jp">赤羽 ミミ</div>
+            <div class="char-name-en">Akaba mimi</div>
+            <div class="char-divider"></div>
+            <div class="char-desc">いつも上から目線で、<br>おじさんって平気で呼んでくる。<br>口は達者だけど、仕事は少し苦手。<br>褒められると、急に静かになる。</div>
+            <div class="char-tags">
+              <span class="char-tag">挑発的</span>
+              <span class="char-tag">生意気</span>
+              <span class="char-tag">実はポンコツ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ive -->
+        <div class="char-card">
+          <div class="char-img-container">
+            <img class="char-img" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4bcb9fc7-2a88-44f4-8946-07d357855879" alt="黄鳳イブ">
+          </div>
+          <div class="char-info">
+            <div class="char-name-jp">黄鳳 イブ</div>
+            <div class="char-name-en">Houhou Ive</div>
+            <div class="char-divider"></div>
+            <div class="char-desc">サバサバしていて、芯がある。<br>ギャル口調なのに、会話の端々で<br>専門用語が飛んでくる不思議な人。<br>気づくと、主導権を握られている。</div>
+            <div class="char-tags">
+              <span class="char-tag">ギャル</span>
+              <span class="char-tag">知的</span>
+              <span class="char-tag">強気だけど優しい</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imari -->
+        <div class="char-card reverse">
+          <div class="char-img-container">
+            <img class="char-img" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a38fde58-624f-44fc-ac5b-51b3b4055d69" alt="紫嶺イマリ">
+          </div>
+          <div class="char-info">
+            <div class="char-name-jp">紫嶺 イマリ</div>
+            <div class="char-name-en">Shihou Imari</div>
+            <div class="char-divider"></div>
+            <div class="char-desc">いつも落ち着いていて、<br>余裕のある大人の女性に見える。<br>でも本当は、自信がなくて繊細。<br>弱さを見せるのは、少しだけ苦手。</div>
+            <div class="char-tags">
+              <span class="char-tag">大人の余裕</span>
+              <span class="char-tag">完璧主義</span>
+              <span class="char-tag">実は打たれ弱い</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="characters-sub-text">彼女たちの反応は、あなたの言葉によって少しずつ変わっていきます。</p>
+    </section>
+
+    <!-- SYSTEM SECTION -->
+    <section class="system" id="system">
+      <div class="section-title">System</div>
+      <div class="system-sub">会話が、関係を変えていく。</div>
+
+      <div class="system-grid">
+        <div class="system-card">
+          <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9446eda6-1331-4fb5-9438-f24f203f0fa3" alt="system 1">
+        </div>
+        <div class="system-card">
+          <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/52e15da8-faa1-4dc1-9793-e9643f31a719" alt="system 2">
+        </div>
+        <div class="system-card">
+          <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/23999b68-1ea3-44df-a8a5-8f628b46adaf" alt="system 3">
+        </div>
+        <div class="system-card">
+          <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/121be2f1-53d5-4f49-9876-5da018d29b8d" alt="system 4">
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIAL SECTION -->
+    <section class="special">
+      <div class="section-title">Special</div>
+      <div class="special-sub">会話が、関係を変えていく。</div>
+      <div class="special-card">
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/53a6b064-c073-49a4-8d2a-2ce6751c0a74" alt="special">
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="pricing">
+      <div class="section-title">Pricing</div>
+      <div class="pricing-sub">あなたに合ったプランを選んでね</div>
+
+      <div class="pricing-cards">
+        <!-- ¥1,100 -->
+        <div class="pricing-card">
+          <div class="pricing-price">
+            <span class="pricing-yen">¥</span><span class="pricing-amount">1,100</span>
+            <span class="pricing-tax">税込</span>
+          </div>
+          <div class="pricing-details">
+            <div class="pricing-item">
+              <div class="pricing-icon cp">CP</div>
+              <span class="pricing-label">有償CP</span>
+              <span class="pricing-value">14</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon sp">★</div>
+              <span class="pricing-label">特典</span>
+              <span class="pricing-value">+4</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon chat">💬</div>
+              <span class="pricing-label">チャット</span>
+              <span class="pricing-value">約7回</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ¥3,300 -->
+        <div class="pricing-card">
+          <div class="pricing-price">
+            <span class="pricing-yen">¥</span><span class="pricing-amount">3,300</span>
+            <span class="pricing-tax">税込</span>
+          </div>
+          <div class="pricing-details">
+            <div class="pricing-item">
+              <div class="pricing-icon cp">CP</div>
+              <span class="pricing-label">有償CP</span>
+              <span class="pricing-value">34</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon sp">★</div>
+              <span class="pricing-label">特典</span>
+              <span class="pricing-value">+4</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon chat">💬</div>
+              <span class="pricing-label">チャット</span>
+              <span class="pricing-value">約17回</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ¥5,500 人気 -->
+        <div class="pricing-card popular">
+          <div class="pricing-price">
+            <span class="pricing-yen">¥</span><span class="pricing-amount">5,500</span>
+            <span class="pricing-tax">税込</span>
+          </div>
+          <div class="pricing-details">
+            <div class="pricing-item">
+              <div class="pricing-icon cp">CP</div>
+              <span class="pricing-label">有償CP</span>
+              <span class="pricing-value">60</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon sp">★</div>
+              <span class="pricing-label">特典</span>
+              <span class="pricing-value">+10</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon chat">💬</div>
+              <span class="pricing-label">チャット</span>
+              <span class="pricing-value">約30回</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ¥11,000 -->
+        <div class="pricing-card">
+          <div class="pricing-price">
+            <span class="pricing-yen">¥</span><span class="pricing-amount">11,000</span>
+            <span class="pricing-tax">税込</span>
+          </div>
+          <div class="pricing-details">
+            <div class="pricing-item">
+              <div class="pricing-icon cp">CP</div>
+              <span class="pricing-label">有償CP</span>
+              <span class="pricing-value">122</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon sp">★</div>
+              <span class="pricing-label">特典</span>
+              <span class="pricing-value">+22</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon chat">💬</div>
+              <span class="pricing-label">チャット</span>
+              <span class="pricing-value">約61回</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ¥33,000 -->
+        <div class="pricing-card">
+          <div class="pricing-price">
+            <span class="pricing-yen">¥</span><span class="pricing-amount">33,000</span>
+            <span class="pricing-tax">税込</span>
+          </div>
+          <div class="pricing-details">
+            <div class="pricing-item">
+              <div class="pricing-icon cp">CP</div>
+              <span class="pricing-label">有償CP</span>
+              <span class="pricing-value">372</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon sp">★</div>
+              <span class="pricing-label">特典</span>
+              <span class="pricing-value">+72</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon chat">💬</div>
+              <span class="pricing-label">チャット</span>
+              <span class="pricing-value">約186回</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ¥55,000 -->
+        <div class="pricing-card">
+          <div class="pricing-price">
+            <span class="pricing-yen">¥</span><span class="pricing-amount">55,000</span>
+            <span class="pricing-tax">税込</span>
+          </div>
+          <div class="pricing-details">
+            <div class="pricing-item">
+              <div class="pricing-icon cp">CP</div>
+              <span class="pricing-label">有償CP</span>
+              <span class="pricing-value">630</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon sp">★</div>
+              <span class="pricing-label">特典</span>
+              <span class="pricing-value">+130</span>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-icon chat">💬</div>
+              <span class="pricing-label">チャット</span>
+              <span class="pricing-value">約315回</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="pricing-note">※チャット回数は目安です　　※特典ポイントは期間限定の場合があります</p>
+    </section>
+
+    <!-- TRUST SECTION -->
+    <section class="trust">
+      <div class="section-title">Trust</div>
+      <div class="trust-card">
+        <p class="trust-text">※本サービスは18歳未満の方はご利用いただけません
+
+表現内容は運営ポリシーに基づき管理されています
+
+利用規約・特定商取引法・資金決済法に基づく表記はこちら</p>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq" id="faq">
+      <div class="section-title">FAQ</div>
+
+      <div class="faq-container">
+        <!-- Q1 -->
+        <div class="faq-item open">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <div class="faq-q-label">Q1</div>
+            <div class="faq-q-text">無料で遊べますか？</div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-a-label">A</div>
+            <div class="faq-a-text">はい。無料で会話を体験できます。物語の進行や一部機能はポイントを使用します。</div>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <div class="faq-q-label">Q2</div>
+            <div class="faq-q-text">課金は何に使われますか？</div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-a-label">A</div>
+            <div class="faq-a-text">キャラクターとの会話や、関係性が深まる体験の解放に使用されます。</div>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <div class="faq-q-label">Q3</div>
+            <div class="faq-q-text">どこから有料になりますか？</div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-a-label">A</div>
+            <div class="faq-a-text">無料範囲を超える会話や、物語の進行に応じた体験でポイントを使用します。</div>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <div class="faq-q-label">Q4</div>
+            <div class="faq-q-text">ポイントはまとめて購入できますか？</div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-a-label">A</div>
+            <div class="faq-a-text">はい。複数のポイント購入方法をご用意しています。</div>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <div class="faq-q-label">Q5</div>
+            <div class="faq-q-text">年齢制限はありますか？</div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-a-label">A</div>
+            <div class="faq-a-text">本サービスは18歳未満の方はご利用いただけません。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logos">
+          <img
+            class="footer-game-logo"
+            src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b930e0a7-e756-4bec-accf-bcecbc2ef628"
+            alt="Game Logo"
+          >
+          <div class="footer-ikigai">
+            <div class="footer-ikigai-icon">
+              <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bcde73a5-c6ef-4b5d-bf71-783749cc1bf4" alt="Ikigai icon">
+            </div>
+            <span class="footer-ikigai-name">IKigai Games</span>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="#" class="footer-link">運営会社</a>
+          <a href="#" class="footer-link">プライバシーポリシー</a>
+          <a href="#" class="footer-link">お問い合わせ</a>
+        </div>
+
+        <p class="footer-copyright">© Ikigai Game Labo. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div><!-- /wrapper -->
+
+  <script>
+    // ========== FAQ Accordion ==========
+    function toggleFaq(questionEl) {
+      const item = questionEl.closest('.faq-item');
+      item.classList.toggle('open');
+    }
+
+    // ========== Smooth Scroll for Nav Links ==========
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
