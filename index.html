@@ -59,37 +59,18 @@
        HERO SECTION
     ============================================ */
     .hero {
-      position: relative;
       width: 100%;
-      height: 500px;
-      overflow: hidden;
-      background: linear-gradient(180deg, #fdf2f8 0%, #fce7f3 30%, #fbcfe8 60%, #f9a8d4 100%);
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      opacity: 0.25;
-    }
-
-    .hero-content {
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
+      background: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      z-index: 10;
+      padding: 20px 16px 30px;
     }
 
-    .hero-logo {
-      width: 160px;
-      margin-bottom: 12px;
+    .hero-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
     }
 
     .hero-cta {
@@ -104,31 +85,12 @@
       text-decoration: none;
       box-shadow: 0 4px 20px rgba(230, 90, 166, 0.4);
       transition: transform 0.3s, box-shadow 0.3s;
+      margin-top: 20px;
     }
 
     .hero-cta:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 28px rgba(230, 90, 166, 0.5);
-    }
-
-    .hero-characters {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 0;
-    }
-
-    .hero-characters img {
-      height: 280px;
-      width: auto;
-      object-fit: contain;
-      object-position: bottom;
-      margin: 0 -30px;
     }
 
     /* ============================================
@@ -933,26 +895,17 @@
       }
 
       .hero {
-        height: 600px;
+        padding: 40px 20px 50px;
       }
 
-      .hero-content {
-        top: 40px;
-      }
-
-      .hero-logo {
-        width: 240px;
-        margin-bottom: 16px;
+      .hero-image {
+        max-width: 500px;
       }
 
       .hero-cta {
         font-size: 16px;
         padding: 14px 40px;
-      }
-
-      .hero-characters img {
-        height: 420px;
-        margin: 0 -50px;
+        margin-top: 30px;
       }
 
       .section-title {
@@ -1226,16 +1179,8 @@
         gap: 32px;
       }
 
-      .hero {
-        height: 650px;
-      }
-
-      .hero-logo {
-        width: 280px;
-      }
-
-      .hero-characters img {
-        height: 450px;
+      .hero-image {
+        max-width: 550px;
       }
 
       .section-title {
@@ -1270,29 +1215,8 @@
 
     <!-- HERO SECTION -->
     <div class="hero">
-      <img
-        class="hero-bg"
-        src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fa4f404b-e3a9-414e-b8fc-3233a34ae20f"
-        alt="hero background"
-      >
-
-      <!-- Logo + CTA -->
-      <div class="hero-content">
-        <img
-          class="hero-logo"
-          src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9a466554-d63c-46cb-a4f7-abafd1ac6ce8"
-          alt="ゆめかの ロゴ"
-        >
-        <a href="#" class="hero-cta">今すぐプレイ</a>
-      </div>
-
-      <!-- Character group -->
-      <div class="hero-characters">
-        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fd4ca649-4d72-411f-a490-dae0c7b4bc35" alt="imari">
-        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9ebcf30c-de6f-4b67-87f4-7180ac0ecc07" alt="mimi">
-        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4758e535-470a-44c0-a634-d48ca8bd51b9" alt="seira">
-        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/936dc821-551b-4158-a2c3-f026b7d09272" alt="ive">
-      </div>
+      <img class="hero-image" src="hero-main.png" alt="ゆめかの">
+      <a href="#" class="hero-cta">今すぐプレイ</a>
     </div>
 
     <!-- TOPICS SECTION -->

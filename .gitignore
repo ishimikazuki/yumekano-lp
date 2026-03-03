@@ -1,5 +1,14 @@
 # Debug screenshots
-*.png
+*-check.png
+*-updated.png
+debug-*.png
+lp-*.png
+ngrok-*.png
+firstview-*.png
+pricing-*.png
+
+# Keep hero image
+!hero-main.png
 
 # Playwright MCP
 .playwright-mcp/
