@@ -18,3 +18,4 @@ desktop.html
 
 # Node modules (if added later)
 node_modules/
+.vercel
