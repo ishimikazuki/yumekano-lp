@@ -5,7 +5,8 @@
 
 ## 技術スタック
 - HTML（シンプルな静的サイト）
-- index.html のみ
+- index.html（メインLP）
+- privacy.html（プライバシーポリシー）
 
 ## ローカル確認方法
 ```bash
